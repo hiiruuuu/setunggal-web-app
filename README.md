@@ -1,6 +1,6 @@
 # ☕ Setunggal Web App
 
-![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 
@@ -10,7 +10,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Backend Framework:** Laravel 10 (PHP)
+- **Backend Framework:** Laravel 13 (PHP)
 - **Frontend Templating:** Laravel Blade
 - **Styling:** Tailwind CSS
 - **Autentikasi:** Laravel Breeze
