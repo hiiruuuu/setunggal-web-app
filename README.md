@@ -1,58 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ☕ Setunggal Web App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 
-## About Laravel
+**Setunggal Web App** adalah aplikasi manajemen menu berbasis web yang dirancang khusus untuk kedai/usaha kuliner. Aplikasi ini mengintegrasikan katalog menu publik yang interaktif dengan dashboard administrasi yang aman untuk mempermudah pengelolaan data menu makanan & minuman secara real-time.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend Framework:** Laravel 10 (PHP)
+- **Frontend Templating:** Laravel Blade
+- **Styling:** Tailwind CSS
+- **Autentikasi:** Laravel Breeze
+- **Database:** MySQL / SQLite (Eloquent ORM)
+- **Storage:** Local Storage (`public` disk)
+- **Testing:** PHPUnit / Laravel Feature Tests
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Fitur Utama
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🌐 Sisi Publik (Landing Page)
+- **Katalog Menu Interaktif:** Menampilkan daftar menu makanan & minuman yang berstatus *Ready*.
+- **Pencarian Real-Time:** Pencarian spesifik menu berdasarkan kata kunci nama.
+- **Filter Kategori:** Memfilter daftar menu berdasarkan kategori (Kopi, Non-Kopi, Camilan, dll).
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 🔐 Sisi Admin (Dashboard Admin)
+- **Autentikasi Protektif:** Mengamankan halaman administrasi menggunakan middleware `auth` & `verified`.
+- **Manajemen Menu (CRUD):** 
+  - Tambah menu baru lengkap dengan unggah foto produk.
+  - Edit informasi menu (nama, harga, kategori, deskripsi, foto).
+  - Hapus menu (otomatis menghapus data database beserta berkas foto di storage).
+- **Toggle Status Fast-Action:** Mengubah status ketersediaan menu (*Ready* / *Habis*) secara cepat langsung dari tabel dashboard.
+- **Manajemen Profil:** Pengaturan profil admin, ubah kata sandi, dan fitur hapus akun.
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🧪 Testing (Pengujian Otomatis) --> opsi pengujian ini mungkin belum optimal, silahkan melakukan pengujian manual
 
-```bash
-composer require laravel/boost --dev
+Proyek ini telah dilengkapi dengan pengujian fitur (*Feature Tests*) untuk memastikan stabilitas fungsi autentikasi dan manajemen menu:
 
-php artisan boost:install
-```
+- `tests/Feature/MenuManagementTest.php`: Menguji proteksi tamu, CRUD menu, simulasi upload foto, toggle status, dan pembersihan file storage.
+- `tests/Feature/ProfileTest.php`: Menguji keamanan dan integritas manajemen profil admin.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Jalankan pengujian dengan perintah:
+`php artisan test`
 
-## Contributing
+### 🚀 Panduan Instalasi & Penggunaan
+1. Prasyarat
+PHP >= 8.1
+Composer
+Node.js & NPM
+Database Server (MySQL/MariaDB)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Langkah Instalasi
+Clone Repositori:
+-`git clone [https://github.com/hiiruuuu/setunggal-web-app.git](https://github.com/hiiruuuu/setunggal-web-app.git)`
+-`cd setunggal-web-app`
+Instal Dependensi PHP & Frontend:
+-`composer install`
+-`npm install`
+Konfigurasi Environment:
+Salin file .env.example menjadi .env:
+-`cp .env.example .env`
+Sesuaikan konfigurasi database pada file .env:
+Cuplikan kode
+-`DB_CONNECTION=mysql`
+-`DB_HOST=127.0.0.1`
+-`DB_PORT=3306`
+-`DB_DATABASE=setunggal_db`
+-`DB_USERNAME=root`
+-`DB_PASSWORD=`
+Generate App Key & Symlink Storage:
+-`php artisan key:generate`
+-`php artisan storage:link`
+Jalankan Migrasi Database:
+-`php artisan migrate`
+Jalankan Server Lokal & Build Asset:
+# Jalankan server Laravel
+-`php artisan serve`
+# Di terminal terpisah, jalankan Vite/Tailwind
+-`npm run dev`
+Akses Aplikasi:
+Buka browser dan akses http://127.0.0.1:8000.
 
-## Code of Conduct
+👤 Pembuatan Akun Admin Pertama
+Untuk membuat akun admin via terminal:
+-`php artisan tinker`
+Kemudian jalankan kode berikut:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`PHP
+\App\Models\User::create([
+    'name' => 'Admin Setunggal',
+    'email' => 'admin@setunggal.com',
+    'password' => bcrypt('password123'),
+]);`
+Ketik exit untuk keluar dari tinker, lalu login melalui rute /login.
